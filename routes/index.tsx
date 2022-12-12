@@ -1,16 +1,26 @@
 import { asset, Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
 import { PageProps } from "$fresh/server.ts";
 import Header from "../components/Header.tsx";
-import { tw } from "twind";
+import { theme, tw } from "twind";
 import { css } from "twind/css";
 
 const TITLE = "Elliot Schep";
 const DESCRIPTION = "Software Developer.";
 const heroPatternStyles = css`
-background-color: #e5e5f7;
 opacity: 0.8;
-background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#444cf7 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #444cf7 2px, #e5e5f7 2px) -1px 0;
+background: radial-gradient(circle, transparent 20%, ${
+  theme("colors.background")
+} 20%, ${
+  theme("colors.background")
+} 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, ${
+  theme("colors.background")
+} 20%, ${
+  theme("colors.background")
+} 80%, transparent 80%, transparent) 25px 25px, linear-gradient(${
+  theme("colors.primary")
+} 2px, transparent 2px) 0 -1px, linear-gradient(90deg, ${
+  theme("colors.primary")
+} 2px, ${theme("colors.background")} 2px) -1px 0;
 background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
 `;
 
@@ -29,7 +39,7 @@ export default function Home(props: PageProps) {
         <meta property="og:image" content={ogImageUrl} />
       </Head>
 
-      <div class="flex flex-col min-h-screen">
+      <div class="flex flex-col min-h-screen bg-background">
         <div class={"flex flex-col"}>
           <Header title={TITLE} active="/" />
         </div>

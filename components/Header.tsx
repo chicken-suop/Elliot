@@ -33,7 +33,7 @@ function Title(props: { title: string }) {
     <>
       <a
         href="/"
-        class="text(1xl primary) block flex items-center"
+        class="text(1xl text) block flex items-center"
       >
         {props.title}
       </a>

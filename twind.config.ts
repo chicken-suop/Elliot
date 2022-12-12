@@ -5,8 +5,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        beige: "#e5e3c5",
-        primary: "#17140f",
+        text: "#fafdfe",
+        primary: "#fbe3f4",
+        background: "#171819",
       },
       backgroundSize: {
         "hero-pattern": "50px 50px, 50px 50px, 25px 25px, 25px 25px",
